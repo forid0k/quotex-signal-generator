@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quotex Signal Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Quotex Signal Generator</h1>
+
+  <div>
+    <label for="market-select">Market:</label>
+    <select id="market-select">
+      <option value="real">Real Market</option>
+      <option value="otc">OTC Market</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="asset-select">Asset:</label>
+    <select id="asset-select">
+      <option value="1">EUR/USD</option>
+      <option value="2">GBP/USD</option>
+      <option value="3">USD/JPY</option>
+      <!-- অন্য অ্যাসেট এড করতে পারবেন -->
+    </select>
+  </div>
+
+  <div>
+    <label for="strategy-select">Strategy:</label>
+    <select id="strategy-select">
+      <option value="priceAction">Price Action</option>
+      <option value="ema">EMA</option>
+      <option value="volume">Volume</option>
+    </select>
+  </div>
+
+  <div id="signal-box">
+    <h2>Live Signal</h2>
+    <div id="signal-text">Waiting for signal...</div>
+  </div>
+
+  <script src="strategy/priceAction.js"></script>
+  <script src="strategy/ema.js"></script>
+  <script src="strategy/volume.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
