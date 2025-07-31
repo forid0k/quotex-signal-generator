@@ -1,0 +1,14 @@
+function priceActionSignal(candles) {
+  if (candles.length < 2) return null;
+
+  const last = candles[candles.length - 1];
+  const prev = candles[candles.length - 2];
+
+  if (last.close > last.open && prev.close < prev.open) {
+    return 'CALL';
+  } else if (last.close < last.open && prev.close > prev.open) {
+    return 'PUT';
+  }
+
+  return null;
+}

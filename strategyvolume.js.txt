@@ -1,0 +1,13 @@
+function volumeSignal(candles) {
+  if (candles.length < 2) return null;
+
+  const last = candles[candles.length - 1];
+  const prev = candles[candles.length - 2];
+
+  if (last.volume > prev.volume * 1.5) {
+    if (last.close > last.open) return 'CALL';
+    if (last.close < last.open) return 'PUT';
+  }
+
+  return null;
+}
